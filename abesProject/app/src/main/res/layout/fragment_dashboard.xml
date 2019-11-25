@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="15dp"-->
+<!--        app:cardCornerRadius="3dp"-->
+<!--        android:id="@+id/layoutuser"-->
+<!--        android:elevation="8dp">-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_gravity="center"-->
+<!--            >-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/user"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="Hello User"-->
+<!--                android:textSize="24sp"-->
+<!--                android:textStyle="italic">-->
+
+<!--            </TextView>-->
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="10dp"
+        android:elevation="20dp"
+        app:cardBackgroundColor="#121212"
+        app:cardCornerRadius="3dp"
+        android:id="@+id/emergencybutton">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="#121212"
+            android:layout_gravity="center">
+
+            <Button
+            android:id="@+id/panicb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"
+            android:background="@drawable/panicbutton"
+            android:gravity="center"
+            android:text="Emergency"
+            android:textColor="#FFF">
+
+        </Button>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="3dp"
+        android:elevation="20dp"
+        android:layout_below="@+id/emergencybutton"
+        android:id="@+id/layoutremarks"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#121212"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Remarks"
+            android:textColor="#BB86FC"
+            android:textStyle="italic"
+            android:textSize="20sp"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="All well!!!"
+                android:id="@+id/remarks"
+                android:textColor="#BB86FC"
+                android:layout_margin="8dp"
+                android:textSize="16sp"></TextView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="3dp"
+        android:elevation="30dp"
+        app:cardBackgroundColor="#121212"
+        android:layout_below="@+id/layoutremarks"
+        >
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="#121212"
+           android:orientation="vertical"
+           >
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Monthly Checkup Reminder"
+               android:layout_margin="10dp"
+               android:textColor="#BB86FC"
+               android:textStyle="italic"
+               android:textSize="20dp"></TextView>
+
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="8dp"
+               android:orientation="horizontal">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Last Date:"
+
+                   android:textSize="16dp"
+                   android:layout_marginLeft="8dp"
+                   android:textColor="#BB86FC"
+                  ></TextView>
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="8dp"
+               android:textSize="16dp"
+                android:inputType="date"
+               android:id="@+id/lastdate"
+               android:text="12/06/2019"
+               android:textColor="#BB86FC"></TextView>
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="8dp"
+               android:orientation="horizontal">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Next Date:"
+                   android:textSize="16dp"
+
+                   android:layout_marginLeft="8dp"
+                   android:textColor="#BB86FC"
+                   ></TextView>
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="8dp"
+                   android:textSize="16dp"
+                   android:inputType="date"
+
+                   android:id="@+id/nextdate"
+                   android:text="12/06/2019"
+                   android:textColor="#BB86FC"></TextView>
+
+           </LinearLayout>
+
+       </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

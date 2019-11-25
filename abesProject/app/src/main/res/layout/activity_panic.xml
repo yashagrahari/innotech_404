@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".PanicActivity">
+
+
+    <TextView
+        android:id="@+id/countdown"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_design"
+        android:text="SOS facilities in:"/>
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/countdown"
+        android:id="@+id/panicCancel"
+        android:layout_width="wrap_content"
+        android:background="#00A4A5"
+        android:layout_height="wrap_content"
+        android:text="Cancel"/>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/progress"
+        android:layout_below="@+id/panicCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textMsg1"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="sending text to ****"
+            android:textSize="25dp" />
+
+        <ProgressBar
+            android:layout_toRightOf="@+id/textMsg1"
+            android:id="@+id/ProgressBar1"
+            android:layout_margin="10dp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"/>
+
+        <ProgressBar
+            android:layout_below="@+id/textMsg1"
+            android:id="@+id/ProgressBar2"
+            android:layout_margin="10dp"
+            android:progress="10"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:min="0"
+            android:max="100"
+
+            android:layout_height="50dp"/>
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
