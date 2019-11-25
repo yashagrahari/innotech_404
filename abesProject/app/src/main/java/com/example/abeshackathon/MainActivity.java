@@ -34,7 +34,7 @@ import static com.example.abeshackathon.Retro.gson;
 public class MainActivity extends AppCompatActivity {
 
     NavigationView navigationView;
-    View behindView;
+
     Gson gson=new Gson();
     @Override
     protected void onCreate(Bundle savedInstanceState) {

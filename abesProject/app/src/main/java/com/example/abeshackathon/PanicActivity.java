@@ -51,18 +51,11 @@ public class PanicActivity extends AppCompatActivity implements LocationListener
     Button cancel;
     RelativeLayout relativeLayout;
     ProgressBar progressBar;
-    // location
     LocationManager locationManager;
-    protected LocationListener locationListener;
     protected Context context;
     TextView txtLat;
-    String lat;
-    String provider;
-    String address="";
-    protected String latitude,longitude;
-    protected boolean gps_enabled,network_enabled;
-    //location
 
+    String address="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,10 +87,44 @@ public class PanicActivity extends AppCompatActivity implements LocationListener
                 }
 
                 int flag = response.body().get(0).getWarn();
-                Log.e("confirmat...",flag+"");
-                SharedPreferences.Editor editor=sharedPreferences.edit();
-                editor.putString("id",flag+"");
-                editor.apply();
+//                Log.e("confirmat...",flag+"");
+//                SharedPreferences.Editor editor=sharedPreferences.edit();
+//                editor.putString("id",flag+"");
+//                editor.apply();
+
+//                String flag = sharedPreferences.getString("id",-1+"");
+
+                Log.e("warn code",flag+"");
+                if (flag==0){
+                    startCountdown();
+                }
+                else if(flag==1){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(PanicActivity.this);
+                    builder.setTitle("Are You Sure")
+                            .setCancelable(false)
+                            .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    startCountdown();
+                                }
+                            }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                            finish();
+                        }
+                    }).
+                            show();
+                }
+                else if(flag==-1){
+                    Toast.makeText(PanicActivity.this,"Login First",Toast.LENGTH_LONG).show();
+                    return;
+                }
+                else if(flag==-2){
+                    Toast.makeText(PanicActivity.this,"Unauthorised",Toast.LENGTH_LONG).show();
+                    return;
+                }
+
 
 
             }
@@ -108,38 +135,38 @@ public class PanicActivity extends AppCompatActivity implements LocationListener
             }
         });
 
-        String flag = sharedPreferences.getString("id",-1+"");
-
-        Log.e("warn code",flag+"");
-        if (flag.equals("0")){
-            startCountdown();
-        }
-        if(flag.equals("1")){
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("Are You Sure")
-                    .setCancelable(false)
-                    .setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            startCountdown();
-                        }
-                    }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.dismiss();
-                    finish();
-                }
-            }).
-             show();
-        }
-        if(flag.equals("-1")){
-            Toast.makeText(this, "Login First", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if(flag.equals("2")){
-            Toast.makeText(this, "Unauthorised", Toast.LENGTH_SHORT).show();
-            return;
-        }
+//        String flag = sharedPreferences.getString("id",-1+"");
+//
+//        Log.e("warn code",flag+"");
+//        if (flag.equals("0")){
+//            startCountdown();
+//        }
+//        if(flag.equals("1")){
+//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//            builder.setTitle("Are You Sure")
+//                    .setCancelable(false)
+//                    .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialogInterface, int i) {
+//                            startCountdown();
+//                        }
+//                    }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialogInterface, int i) {
+//                    dialogInterface.dismiss();
+//                    finish();
+//                }
+//            }).
+//             show();
+//        }
+//        if(flag.equals("-1")){
+//            Toast.makeText(this, "Login First", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
+//        if(flag.equals("2")){
+//            Toast.makeText(this, "Unauthorised", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
 
     }
 
@@ -157,16 +184,18 @@ public class PanicActivity extends AppCompatActivity implements LocationListener
     }
     @Override
     public void onLocationChanged(Location location) {
-        address=("Latitude: " + location.getLatitude() + "\n Longitude: " + location.getLongitude());
+        address=("Latitude: " + location.getLatitude() + "\nLongitude: " + location.getLongitude()+"\n");
+
 
         try {
             Geocoder geocoder = new Geocoder(this, Locale.getDefault());
             List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
-            address=(address + "\n"+addresses.get(0).getAddressLine(0));
-//                    addresses.get(0).getAddressLine(1)+", "+addresses.get(0).getAddressLine(2));
+            address=address +addresses.get(0).getAddressLine(0);
+            Log.e("address",address);
+
         }catch(Exception e)
         {
-            Log.e("error",e.toString());
+
         }
 
     }
@@ -292,9 +321,10 @@ public class PanicActivity extends AppCompatActivity implements LocationListener
 //        }
 //        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
         progressBar.setProgress(30);
-//        onMsg(panicResponses.get(0).getLinkEmergencyContact());
-//        progressBar.setProgress(60);
-//        onMsg(panicResponses.get(0).getLinkDocNo());
+        getLocation();
+        onMsg(panicResponses.get(0).getLinkEmergencyContact());
+        progressBar.setProgress(60);
+        onMsg(panicResponses.get(0).getLinkDocNo());
         progressBar.setProgress(80);
         onCall("7376148354");
         progressBar.setProgress(100);
@@ -327,47 +357,49 @@ public class PanicActivity extends AppCompatActivity implements LocationListener
         }
     }
 
-//    private boolean permissionGrantedMsg() {
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions((Activity) this, new String[]{Manifest.permission.SEND_SMS}, 1000);
-//            return false;
-//        }
-//        return true;
-//    }
-////
-//    private void onMsg(final String number){
-//        if (number.length() == 0) {
-//            return;
-//        }
-//        if (permissionGrantedMsg()) {
+    private boolean permissionGrantedMsg() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((Activity) this, new String[]{Manifest.permission.SEND_SMS}, 1000);
+            return false;
+        }
+        return true;
+    }
 //
-//            sendSMS(number);
-//
-//
-//        }
-//    }
+    private void onMsg(final String number){
+        if (number.length() == 0) {
+            return;
+        }
+        if (permissionGrantedMsg()) {
+
+            sendSMS(number);
+
+
+        }
+    }
 
 
 
 
 
-//    public void sendSMS(String number) {
-//
-//        String SMS_SENT_INTENT_FILTER = "com.yourapp.sms_send";
-//        String SMS_DELIVERED_INTENT_FILTER = "com.yourapp.sms_delivered";
-//
-//        String message = "SOS!! I am seriously ill and being taken to nearest hospital " +"Current Location:"+address;
-//        Log.e("number",number);
-//        Log.e("message",message);
-//
-//        PendingIntent sentPI = PendingIntent.getBroadcast(this, 0, new Intent(
-//                SMS_SENT_INTENT_FILTER), 0);
-//        PendingIntent deliveredPI = PendingIntent.getBroadcast(this, 0, new Intent(
-//                SMS_DELIVERED_INTENT_FILTER), 0);
-//
-//        SmsManager sms = SmsManager.getDefault();
-//        sms.sendTextMessage(number, null, message, sentPI, deliveredPI);
-//
-//    }
+    public void sendSMS(String number) {
+
+        String SMS_SENT_INTENT_FILTER = "com.yourapp.sms_send";
+        String SMS_DELIVERED_INTENT_FILTER = "com.yourapp.sms_delivered";
+        getLocation();
+
+        String message = address+"\n SOS!! I am seriously Ill and being taken to nearest hospital ";
+        Log.e("number",number);
+        Log.e("message",message);
+
+        PendingIntent sentPI = PendingIntent.getBroadcast(this, 0, new Intent(
+                SMS_SENT_INTENT_FILTER), 0);
+        PendingIntent deliveredPI = PendingIntent.getBroadcast(this, 0, new Intent(
+                SMS_DELIVERED_INTENT_FILTER), 0);
+
+        SmsManager sms = SmsManager.getDefault();
+        sms.sendTextMessage(number,null,message,sentPI,deliveredPI);
+//        sms.sendTextMessage(number, null, address, sentPI, deliveredPI);
+
+    }
 
 }
