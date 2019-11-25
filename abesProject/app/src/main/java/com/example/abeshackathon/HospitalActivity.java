@@ -29,14 +29,10 @@ public class HospitalActivity extends AppCompatActivity {
 
     Gson gson=new Gson();
     Button reset,add;
+    Spinner spinner;
 
 
-     Spinner spinner;
-    List<String> c=new ArrayList<String>();
-
-    List<Hospitaldataresponse> hospitaldataresponses;
-
-    //    String[] spinnerContent = {};
+//    String[] spinnerContent = {};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,14 +42,12 @@ public class HospitalActivity extends AppCompatActivity {
 
 
 
-
         Call<List<Hospitaldataresponse>> call=hospitalrequest.requestresponse();
         call.enqueue(new Callback<List<Hospitaldataresponse>>() {
             @Override
             public void onResponse(Call<List<Hospitaldataresponse>> call, Response<List<Hospitaldataresponse>> response) {
-                hospitaldataresponses=response.body();
+                List<Hospitaldataresponse> hospitaldataresponses=response.body();
                 Log.e("medicaldta",gson.toJson(hospitaldataresponses));
-                setsubjectSpinner();
 
             }
 
@@ -111,14 +105,5 @@ public class HospitalActivity extends AppCompatActivity {
 
             }
         });
-    }
-    void setsubjectSpinner(){
-        for (int i=0;i<hospitaldataresponses.size();i++){
-            String sub=hospitaldataresponses.get(i).getName();
-            c.add(sub);
-        }
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(getBaseContext(),R.layout.support_simple_spinner_dropdown_item,c);
-        adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
     }
 }

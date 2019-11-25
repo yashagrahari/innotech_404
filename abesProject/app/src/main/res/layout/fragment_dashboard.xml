@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#000"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -42,16 +41,15 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_margin="10dp"
-        android:elevation="20dp"
-        app:cardBackgroundColor="#121212"
+        android:elevation="8dp"
         app:cardCornerRadius="3dp"
+        app:cardBackgroundColor="@color/windowBackground"
         android:id="@+id/emergencybutton">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:background="#121212"
             android:layout_gravity="center">
 
             <Button
@@ -65,7 +63,7 @@
             android:background="@drawable/panicbutton"
             android:gravity="center"
             android:text="Emergency"
-            android:textColor="#FFF">
+            android:textColor="#E7E7E8">
 
         </Button>
         </LinearLayout>
@@ -79,22 +77,24 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         app:cardCornerRadius="3dp"
-        android:elevation="20dp"
+        android:elevation="8dp"
+        app:cardBackgroundColor="@color/windowBackground"
         android:layout_below="@+id/emergencybutton"
         android:id="@+id/layoutremarks"
         >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#121212"
             android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="Remarks"
-            android:textColor="#BB86FC"
-            android:textStyle="italic"
+            android:textColor="#000"
+            android:fontFamily="sans-serif-light"
+
+            android:textStyle="italic|bold"
             android:textSize="20sp"></TextView>
 
             <TextView
@@ -102,8 +102,10 @@
                 android:layout_height="wrap_content"
                 android:text="All well!!!"
                 android:id="@+id/remarks"
-                android:textColor="#BB86FC"
+                android:textColor="#000"
                 android:layout_margin="8dp"
+                android:fontFamily="sans-serif-light"
+
                 android:textSize="16sp"></TextView>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -112,15 +114,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:id="@+id/reminder"
         app:cardCornerRadius="3dp"
-        android:elevation="30dp"
-        app:cardBackgroundColor="#121212"
+        app:cardBackgroundColor="@color/windowBackground"
         android:layout_below="@+id/layoutremarks"
         >
        <LinearLayout
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:background="#121212"
            android:orientation="vertical"
            >
 
@@ -129,8 +130,10 @@
                android:layout_height="wrap_content"
                android:text="Monthly Checkup Reminder"
                android:layout_margin="10dp"
-               android:textColor="#BB86FC"
-               android:textStyle="italic"
+               android:fontFamily="sans-serif-light"
+
+               android:textColor="#000"
+               android:textStyle="italic|bold"
                android:textSize="20dp"></TextView>
 
            <LinearLayout
@@ -145,19 +148,23 @@
                    android:text="Last Date:"
 
                    android:textSize="16dp"
+                   android:fontFamily="sans-serif-light"
+
                    android:layout_marginLeft="8dp"
-                   android:textColor="#BB86FC"
+                   android:textColor="#000"
                   ></TextView>
 
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginLeft="8dp"
+               android:fontFamily="sans-serif-light"
+
                android:textSize="16dp"
                 android:inputType="date"
                android:id="@+id/lastdate"
                android:text="12/06/2019"
-               android:textColor="#BB86FC"></TextView>
+               android:textColor="#000"></TextView>
 
            </LinearLayout>
 
@@ -173,8 +180,10 @@
                    android:text="Next Date:"
                    android:textSize="16dp"
 
+                   android:fontFamily="sans-serif-light"
+
                    android:layout_marginLeft="8dp"
-                   android:textColor="#BB86FC"
+                   android:textColor="#000"
                    ></TextView>
 
                <TextView
@@ -185,13 +194,95 @@
                    android:inputType="date"
 
                    android:id="@+id/nextdate"
+                   android:fontFamily="sans-serif-light"
+
                    android:text="12/06/2019"
-                   android:textColor="#BB86FC"></TextView>
+                   android:textColor="#000"></TextView>
 
            </LinearLayout>
 
        </LinearLayout>
 
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="3dp"
+        app:cardBackgroundColor="@color/windowBackground"
+        android:layout_below="@+id/reminder"
+        >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="170dp"
+            android:layout_height="175dp"
+            android:layout_margin="3dp"
+            app:cardBackgroundColor="@color/windowBackground"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/doc"
+                android:backgroundTint="#9CD5AC"></ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Find a Doctor"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"></TextView>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+        <View
+            android:layout_width="3dp"
+            android:layout_height="175dp"
+            android:background="@color/gray"
+            android:layout_margin="5dp"
+            ></View>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            app:cardBackgroundColor="@color/windowBackground"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/peal"
+                android:background="@drawable/hospital"></ImageView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Find a clinic"></TextView>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 

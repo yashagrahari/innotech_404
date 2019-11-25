@@ -41,15 +41,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        behindView = findViewById(R.id.Behindview);
-
         setSupportActionBar(toolbar);
         setTitle("Dashboard");
+        setTitleColor(R.color.black);
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
+        toggle.setHomeAsUpIndicator(R.drawable.menu_grey);
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.black));
+
+
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         View hview=navigationView.getHeaderView(0);
         TextView drawerName = (TextView) hview.findViewById(R.id.drawerName);
@@ -71,17 +74,14 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
 
                     case R.id.nav_dashboard:
-                        behindView.setVisibility(View.VISIBLE);
                         fragmentClass = Dashboard.class;
                         break;
 
                     case R.id.medical:
-                        behindView.setVisibility(View.GONE);
                         fragmentClass= Medical.class;
                         break;
 
                     case R.id.Profile:
-                        behindView.setVisibility(View.GONE);
                         fragmentClass= Profile.class;
                         break;
                     case R.id.Logout:
@@ -132,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
     private void updateTitleAndDrawer(Fragment f) {
         String fragClassName = f.getClass().getName();
         if (fragClassName.equals(Dashboard.class.getName())) {
-            behindView.setVisibility(View.VISIBLE);
             navigationView.getMenu().getItem(0).setChecked(true);
             setTitle("Dashboard");
         }

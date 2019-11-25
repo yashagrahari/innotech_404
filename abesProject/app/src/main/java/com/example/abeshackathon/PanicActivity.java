@@ -46,25 +46,42 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PanicActivity extends AppCompatActivity{
+public class PanicActivity extends AppCompatActivity implements LocationListener{
     TextView countdown;
     Button cancel;
     RelativeLayout relativeLayout;
     ProgressBar progressBar;
-
+    // location
+    LocationManager locationManager;
+    protected LocationListener locationListener;
+    protected Context context;
+    TextView txtLat;
+    String lat;
+    String provider;
+    String address="";
+    protected String latitude,longitude;
+    protected boolean gps_enabled,network_enabled;
+    //location
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panic);
 
+        if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION}, 101);
+
+        }
+        getLocation();
         final SharedPreferences sharedPreferences = getSharedPreferences("data",MODE_PRIVATE);
         String data = sharedPreferences.getString("logindata","data not stored");
         Loginresponse loginresponse=new Gson().fromJson(data,Loginresponse.class);
         PanicData panicdata = new PanicData();
         panicdata.setId(loginresponse.getId());
-
-
+        txtLat = findViewById(R.id.textMsg1);
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        context=this;
 
         Login login = Retro.createService(Login.class);
         Call<List<WarnResponse>> call = login.warnResponse(panicdata);
@@ -126,6 +143,49 @@ public class PanicActivity extends AppCompatActivity{
 
     }
 
+
+
+
+    void getLocation() {
+        try {
+            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 5, this);
+        }
+        catch(SecurityException e) {
+            e.printStackTrace();
+        }
+    }
+    @Override
+    public void onLocationChanged(Location location) {
+        address=("Latitude: " + location.getLatitude() + "\n Longitude: " + location.getLongitude());
+
+        try {
+            Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+            List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+            address=(address + "\n"+addresses.get(0).getAddressLine(0));
+//                    addresses.get(0).getAddressLine(1)+", "+addresses.get(0).getAddressLine(2));
+        }catch(Exception e)
+        {
+            Log.e("error",e.toString());
+        }
+
+    }
+    @Override
+    public void onProviderDisabled(String provider) {
+        Toast.makeText(PanicActivity.this, "Please Enable GPS and Internet", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+
     String PanicText(){
         String resp="Alcohol:Frequesnt Consumer\nBlood Group:B+\nDiabetes:High\nSugar:Normal";
         try{
@@ -172,15 +232,6 @@ public class PanicActivity extends AppCompatActivity{
         });
     }
 
-//    void confirmation() {
-//
-//
-//
-//        Log.e("confirmation flag",flag[0]+"");
-//
-//
-//    }
-//
 
     void panicTrigger() {
 
@@ -234,11 +285,16 @@ public class PanicActivity extends AppCompatActivity{
         Type type = new TypeToken<List<PanicResponse>>() {
         }.getType();
         List<PanicResponse> panicResponses=new Gson().fromJson(response,type);
-//            finalResponse = "Address:"+panicResponses.get(0).getLinkAddress()+"\nBlood Group:"+panicResponses.get(0).getLinkBloudGroup();
+//        if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//
+//            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION}, 101);
+//
+//        }
+//        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
         progressBar.setProgress(30);
-        onMsg(panicResponses.get(0).getLinkEmergencyContact());
-        progressBar.setProgress(60);
-        onMsg(panicResponses.get(0).getLinkDocNo());
+//        onMsg(panicResponses.get(0).getLinkEmergencyContact());
+//        progressBar.setProgress(60);
+//        onMsg(panicResponses.get(0).getLinkDocNo());
         progressBar.setProgress(80);
         onCall("7376148354");
         progressBar.setProgress(100);
@@ -246,6 +302,7 @@ public class PanicActivity extends AppCompatActivity{
         Log.e("call1",panicResponses.get(0).getLinkEmergencyContact());
         Log.e("call2",panicResponses.get(0).getLinkDocName());
     }
+
 
 
     private boolean permissionGrantedCall() {
@@ -270,52 +327,47 @@ public class PanicActivity extends AppCompatActivity{
         }
     }
 
-    private boolean permissionGrantedMsg() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions((Activity) this, new String[]{Manifest.permission.SEND_SMS}, 1000);
-            return false;
-        }
-        return true;
-    }
-
-    private void onMsg(final String number){
-        if (number.length() == 0) {
-            return;
-        }
-        if (permissionGrantedMsg()) {
-
-            sendSMS(number);
-
-
-        }
-    }
-
-
-    public void sendSMS(String number) {
-
-//        Uri sms_uri = Uri.parse("smsto:" + number);
-//        Intent sms_intent = new Intent(Intent.ACTION_SENDTO, sms_uri);
-//        sms_intent.putExtra("sms_body", "-- From team ERP");
-//        this.startActivity(sms_intent);
-//        SmsManager.getDefault().sendTextMessage(number,null,"message here",null,null);
+//    private boolean permissionGrantedMsg() {
+//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions((Activity) this, new String[]{Manifest.permission.SEND_SMS}, 1000);
+//            return false;
+//        }
+//        return true;
+//    }
+////
+//    private void onMsg(final String number){
+//        if (number.length() == 0) {
+//            return;
+//        }
+//        if (permissionGrantedMsg()) {
+//
+//            sendSMS(number);
+//
+//
+//        }
+//    }
 
 
-        String SMS_SENT_INTENT_FILTER = "com.yourapp.sms_send";
-        String SMS_DELIVERED_INTENT_FILTER = "com.yourapp.sms_delivered";
-
-        String message = "SOS!! I am seriously ill and being taken to nearest hospital " +"Current Location:"+"KIET Group of institutions NH-58 ,Ghaziabad,Uttar Pradesh ";
-        Log.e("number",number);
-
-        PendingIntent sentPI = PendingIntent.getBroadcast(this, 0, new Intent(
-                SMS_SENT_INTENT_FILTER), 0);
-        PendingIntent deliveredPI = PendingIntent.getBroadcast(this, 0, new Intent(
-                SMS_DELIVERED_INTENT_FILTER), 0);
-
-        SmsManager sms = SmsManager.getDefault();
-        sms.sendTextMessage(number, null, message, sentPI, deliveredPI);
-
-    }
 
 
+
+//    public void sendSMS(String number) {
+//
+//        String SMS_SENT_INTENT_FILTER = "com.yourapp.sms_send";
+//        String SMS_DELIVERED_INTENT_FILTER = "com.yourapp.sms_delivered";
+//
+//        String message = "SOS!! I am seriously ill and being taken to nearest hospital " +"Current Location:"+address;
+//        Log.e("number",number);
+//        Log.e("message",message);
+//
+//        PendingIntent sentPI = PendingIntent.getBroadcast(this, 0, new Intent(
+//                SMS_SENT_INTENT_FILTER), 0);
+//        PendingIntent deliveredPI = PendingIntent.getBroadcast(this, 0, new Intent(
+//                SMS_DELIVERED_INTENT_FILTER), 0);
+//
+//        SmsManager sms = SmsManager.getDefault();
+//        sms.sendTextMessage(number, null, message, sentPI, deliveredPI);
+//
+//    }
 
 }

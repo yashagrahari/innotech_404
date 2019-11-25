@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:apps="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#000"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,8 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        apps:cardBackgroundColor="#121212"
-        android:elevation="30dp"
         apps:cardCornerRadius="5dp"
         >
         <LinearLayout
@@ -30,7 +27,7 @@
             <View
                 android:layout_width="160dp"
                 android:layout_height="2dp"
-                android:background="#9AB0EC"></View>
+                android:background="#000"></View>
 
 
 
@@ -43,14 +40,14 @@
                 android:layout_height="wrap_content"
                 android:text="Name :"
                 android:textSize="18sp"
-                android:textColor="#fff">
+                android:textColor="#000">
 
             </TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#fff"
+                    android:textColor="#000"
                     android:id="@+id/name"
                     android:text="YASH AGRAHARI"
                     android:textSize="18sp"></TextView>
@@ -67,14 +64,14 @@
                     android:layout_height="wrap_content"
                     android:text="Age :"
                     android:textSize="18sp"
-                    android:textColor="#fff">
+                    android:textColor="#000">
 
                 </TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#fff"
+                    android:textColor="#000"
                     android:id="@+id/age"
 
                     android:text="19"
@@ -88,14 +85,14 @@
                     android:text="Blood Group :"
                     android:layout_marginLeft="40dp"
                     android:textSize="18sp"
-                    android:textColor="#fff">
+                    android:textColor="#000">
 
                 </TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#fff"
+                    android:textColor="#000"
                     android:id="@+id/bg"
                     android:text="B+"
                     android:textSize="18sp"></TextView>
@@ -115,14 +112,14 @@
 
                     android:text="Mobile no. :"
                     android:textSize="18sp"
-                    android:textColor="#fff">
+                    android:textColor="#000">
 
                 </TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#fff"
+                    android:textColor="#000"
                     android:text="9792920841"
                     android:id="@+id/mobileno"
                     android:textSize="18sp"></TextView>
@@ -140,14 +137,14 @@
                     android:layout_height="wrap_content"
                     android:text="Email :"
                     android:textSize="18sp"
-                    android:textColor="#fff">
+                    android:textColor="#000">
 
                 </TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#fff"
+                    android:textColor="#000"
                     android:id="@+id/email"
 
                     android:text="agrahariyash10@gmail.com"
@@ -167,14 +164,14 @@
 
                     android:text="Address :"
                     android:textSize="18sp"
-                    android:textColor="#fff">
+                    android:textColor="#000">
 
                 </TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#fff"
+                    android:textColor="#000"
                     android:id="@+id/address"
                     android:text="House no.40/A purdilpur Golghar GORAKHPUR -273001"
                     android:textSize="18sp"></TextView>
@@ -192,8 +189,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        apps:cardBackgroundColor="#121212"
-        android:elevation="30dp"
         apps:cardCornerRadius="3dp"
         >
         <LinearLayout
@@ -212,7 +207,7 @@
             <View
                 android:layout_width="160dp"
                 android:layout_height="2dp"
-                android:background="#9AB0EC"></View>
+                android:background="#000"></View>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -224,7 +219,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Family Doctor :"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:textSize="18sp"
                     ></TextView>
 
@@ -232,7 +227,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:id="@+id/dname"
                     android:text="Dr.Samyak Jain"></TextView>
             </LinearLayout>
@@ -249,7 +244,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Doctor's email :"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:textSize="18sp"
                     ></TextView>
 
@@ -258,7 +253,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
                     android:id="@+id/demail"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:text="mephenomenal@gmail.com"></TextView>
             </LinearLayout>
 
@@ -273,7 +268,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Doctor's Mobile no. :"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:textSize="18sp"
                     ></TextView>
 
@@ -281,7 +276,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:id="@+id/dmobile"
                     android:text="9792920841"></TextView>
             </LinearLayout>
@@ -298,7 +293,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Emergency contacts :"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:textSize="18sp"
                     ></TextView>
 
@@ -306,7 +301,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:id="@+id/emergencycontacts"
                     android:text="1800291376"></TextView>
             </LinearLayout>
@@ -323,7 +318,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pre Health details :"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:textSize="18sp"
                     ></TextView>
 
@@ -331,7 +326,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:id="@+id/prehealth"
                     android:text="All fine"></TextView>
             </LinearLayout>
@@ -346,7 +341,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Health status :"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:textSize="18sp"
                     ></TextView>
 
@@ -354,7 +349,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:text="Improving"></TextView>
             </LinearLayout>
 
@@ -368,7 +363,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hospital in Touch :"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:textSize="18sp"
                     ></TextView>
 
@@ -376,7 +371,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:text="Yashoda Hospital"></TextView>
             </LinearLayout>
 
@@ -391,7 +386,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" Address of hospital :"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:textSize="18sp"
                     ></TextView>
 
@@ -399,7 +394,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:textColor="#FFF"
+                    android:textColor="#000"
                     android:text="Rdc Ghaziabad-201206"></TextView>
             </LinearLayout>
 

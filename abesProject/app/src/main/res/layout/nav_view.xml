@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
     android:layout_height="175dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:foreground="?android:attr/selectableItemBackground"
     android:clickable="false"
+    android:orientation="vertical"
+    android:gravity="center"
     android:id="@+id/nav_header"
-    android:background="#000">
+    android:background="#E9F5EE">
 
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/drawerImage"
         android:transitionName="profile"
         android:layout_width="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:layout_height="80dp"
-        android:layout_centerVertical="true"
         android:layout_margin="8dp"
+        app:civ_border_color="@color/black"
+        app:civ_border_width="2dp"
         android:src="@drawable/doctor" />
 
 
@@ -24,18 +30,20 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:orientation="vertical"
-        android:layout_toRightOf="@+id/drawerImage"
+        android:gravity="center"
+        android:layout_below="@+id/drawerImage"
         android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/drawerName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
+            android:fontFamily="sans-serif-light"
             android:gravity="left"
-            android:text="YASH"
-            android:textColor="#BB86FC"
-            android:textSize="12sp" />
+            android:text="Username"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/drawerId"
@@ -46,11 +54,13 @@
             android:layout_alignRight="@+id/drawerName"
             android:layout_alignStart="@+id/drawerName"
             android:layout_below="@+id/drawerName"
+            android:fontFamily="sans-serif-light"
             android:layout_marginTop="3dp"
             android:gravity="left"
-            android:textColor="#BB86FC"
+            android:text="1721CS1157"
+            android:textColor="@android:color/black"
             android:textSize="11sp"
             android:textStyle="italic" />
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

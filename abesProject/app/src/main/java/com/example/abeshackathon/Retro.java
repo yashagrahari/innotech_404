@@ -36,7 +36,7 @@ public class Retro {
 
     private static Retrofit.Builder builder =
             new Retrofit.Builder()
-                    .baseUrl("http://192.168.43.37:8000/")
+                    .baseUrl("http://10.21.66.204:8080/")
                     .addConverterFactory(GsonConverterFactory.create(gson));
 
     private static Retrofit.Builder builder2;

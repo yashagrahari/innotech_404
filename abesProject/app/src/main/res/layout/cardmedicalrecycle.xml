@@ -6,15 +6,12 @@
     android:id="@+id/cardappoint"
     android:layout_width="match_parent"
     app:cardCornerRadius="8dp"
-    app:cardBackgroundColor="#000"
     android:layout_height="wrap_content"
     android:layout_margin="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#121212"
-        android:elevation="30dp"
         android:orientation="vertical">
 
     <LinearLayout
@@ -27,7 +24,7 @@
         android:layout_height="wrap_content"
         android:text="Recent visited date:"
         android:textSize="18sp"
-        android:textColor="#fff"
+        android:textColor="#000"
         ></TextView>
 
 
@@ -38,7 +35,7 @@
             android:textSize="18sp"
             android:id="@+id/vdate"
             android:layout_marginLeft="8dp"
-            android:textColor="#fff"
+            android:textColor="#000"
             ></TextView>
     </LinearLayout>
 
@@ -51,7 +48,7 @@
         android:layout_height="wrap_content"
         android:text="Next appointment date:"
         android:textSize="18sp"
-        android:textColor="#fff"
+        android:textColor="#000"
         ></TextView>
 
 
@@ -62,7 +59,7 @@
         android:textSize="18sp"
         android:id="@+id/ndate"
         android:layout_marginLeft="8dp"
-        android:textColor="#fff"
+        android:textColor="#000"
         ></TextView>
     </LinearLayout>
 
@@ -76,14 +73,14 @@
                 android:layout_height="wrap_content"
                 android:text="Sugar :"
                 android:textSize="18sp"
-                android:textColor="#fff"></TextView>
+                android:textColor="#000"></TextView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="NO"
                 android:id="@+id/sugar"
-                android:textColor="#fff"
+                android:textColor="#000"
                 android:textSize="18sp"></TextView>
 
             <TextView
@@ -99,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:text="NO"
                 android:id="@+id/thyroid"
-                android:textColor="#fff"
+                android:textColor="#000"
                 android:textSize="18sp"></TextView>
 
 
@@ -116,14 +113,14 @@
                 android:layout_height="wrap_content"
                 android:text="Blood Pressure :"
                 android:textSize="18sp"
-                android:textColor="#fff"></TextView>
+                android:textColor="#000"></TextView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="NO"
                 android:id="@+id/bloodpressure"
-                android:textColor="#fff"
+                android:textColor="#000"
                 android:textSize="18sp"></TextView>
 
 
