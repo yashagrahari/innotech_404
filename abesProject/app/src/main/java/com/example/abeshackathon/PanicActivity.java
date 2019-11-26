@@ -271,7 +271,9 @@ public class PanicActivity extends AppCompatActivity implements LocationListener
     void panicTrigger() {
 
 
-        progressBar.setProgress(20);
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        intent.putExtra("android.intent.extra.quickCapture",true);
+//        progressBar.setProgress(20);
         countdown.setVisibility(View.GONE);
         cancel.setVisibility(View.GONE);
         relativeLayout.setVisibility(View.VISIBLE);
@@ -381,6 +383,7 @@ public class PanicActivity extends AppCompatActivity implements LocationListener
                 callIntent.setData(Uri.parse("tel:" + number));
                 Log.e("number call",number);
                 this.startActivity(callIntent);
+
             }
         } else {
             Toast.makeText(this, "enter valid number", Toast.LENGTH_SHORT).show();
