@@ -2,6 +2,10 @@ package com.example.abeshackathon.Fragments;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.MediaActionSound;
+import android.media.MediaPlayer;
+import android.media.ToneGenerator;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -41,6 +45,8 @@ public class Dashboard extends Fragment {
         CardView doctors=parentView.findViewById(R.id.doctor);
         CardView clinic=parentView.findViewById(R.id.clinic);
 
+
+
         TextView nextdate=parentView.findViewById(R.id.nextdate);
        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("data", MODE_PRIVATE);
        String string=sharedPreferences.getString("logindata","");
@@ -54,6 +60,11 @@ public class Dashboard extends Fragment {
        button.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
+//               ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
+//               toneGen1.startTone(ToneGenerator.TONE_CDMA_ONE_MIN_BEEP,15000);
+//               final MediaPlayer mp = MediaPlayer.create(getContext(),R.raw.beep);
+//               mp.start();
+
                Intent intent=new Intent(getActivity(), PanicActivity.class);
                startActivity(intent);
            }

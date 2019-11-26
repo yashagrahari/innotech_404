@@ -41,36 +41,42 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/indicator"
         android:layout_marginTop="50dp"
+        android:backgroundTint="@color/darker"
         android:id="@+id/spinner"
         android:layout_centerHorizontal="true">
 
 
 
     </Spinner>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_below="@+id/spinner">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="60dp"
         android:id="@+id/reset"
         android:layout_below="@+id/spinner"
-        android:layout_marginTop="50dp"
-        android:background="#9AB0EA"
+        android:layout_margin="30dp"
+        android:background="@drawable/number"
         android:text="reset"></Button>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Warning"
-        android:layout_below="@+id/spinner"
-        android:layout_marginTop="50dp"
-        android:background="#9AB0EA"
+        android:background="@drawable/number"
+        android:backgroundTint="@color/red"
         android:id="@+id/addwarn"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="190dp">
+       >
 
     </Button>
+
+    </LinearLayout>
 
 
 </RelativeLayout>

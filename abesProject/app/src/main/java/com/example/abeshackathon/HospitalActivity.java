@@ -10,11 +10,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.abeshackathon.Apiinterface.Hospitalbuttonrequest;
 import com.example.abeshackathon.Apiinterface.Hospitalrequest;
 import com.example.abeshackathon.Apiinterface.Medicalrequest;
 import com.example.abeshackathon.Apiinterface.Warnresetrequest;
+import com.example.abeshackathon.JsonBody.WardData;
 import com.example.abeshackathon.Receiveddata.Hospitalbuttonresponse;
 import com.example.abeshackathon.Receiveddata.Hospitaldataresponse;
 import com.example.abeshackathon.Receiveddata.Medicaldatarersponse;
@@ -43,8 +45,6 @@ public class HospitalActivity extends AppCompatActivity {
     List<Hospitaldataresponse> hospitaldataresponses;
     List<String> c = new ArrayList<String>();
     List<String> d = new ArrayList<String>();
-
-//    String[] spinnerContent = {};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,7 +88,7 @@ public class HospitalActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Hospitaldataresponse>> call, Throwable t) {
-
+                Log.e("error",t.toString());
             }
         });
 
@@ -114,13 +114,15 @@ public class HospitalActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Hospitalbuttonrequest hospitalbuttonrequest= Retro.createService(Hospitalbuttonrequest.class);
-
-                Call<Hospitalbuttonresponse> call=hospitalbuttonrequest.requestresponse(selectedSubjectId);
+                WardData wardData=new WardData();
+                wardData.setId(selectedSubjectId);
+                Call<Hospitalbuttonresponse> call=hospitalbuttonrequest.requestresponse(wardData);
                 call.enqueue(new Callback<Hospitalbuttonresponse>() {
                     @Override
                     public void onResponse(Call<Hospitalbuttonresponse> call, Response<Hospitalbuttonresponse> response) {
                       Hospitalbuttonresponse hospitaldataresponses=response.body();
                       Log.e("response",gson.toJson(hospitaldataresponses));
+                        Toast.makeText(HospitalActivity.this,"Data reset successfull",Toast.LENGTH_LONG).show();
                     }
 
                     @Override
@@ -142,6 +144,8 @@ public class HospitalActivity extends AppCompatActivity {
                     public void onResponse(Call<Hospitalbuttonresponse> call, Response<Hospitalbuttonresponse> response) {
                         Hospitalbuttonresponse hospitaldataresponses=response.body();
                         Log.e("response",gson.toJson(hospitaldataresponses));
+                        Toast.makeText(HospitalActivity.this,"Warn increased",Toast.LENGTH_LONG).show();
+
 
                     }
 

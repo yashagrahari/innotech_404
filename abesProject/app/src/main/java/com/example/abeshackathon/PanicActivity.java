@@ -4,6 +4,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import android.graphics.Bitmap;
 import android.location.Address;
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -18,9 +20,12 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.AudioManager;
+import android.media.ToneGenerator;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.provider.MediaStore;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
@@ -54,6 +59,7 @@ public class PanicActivity extends AppCompatActivity implements LocationListener
     LocationManager locationManager;
     protected Context context;
     TextView txtLat;
+    private static final int pic_id = 123;
 
     String address="";
     @Override
@@ -309,6 +315,8 @@ public class PanicActivity extends AppCompatActivity implements LocationListener
 
 
     void setPanicData(){
+
+
         SharedPreferences sharedPreferences = getSharedPreferences("data",MODE_PRIVATE);
         String response = sharedPreferences.getString("PanicData","null");
         Type type = new TypeToken<List<PanicResponse>>() {
@@ -328,10 +336,32 @@ public class PanicActivity extends AppCompatActivity implements LocationListener
         progressBar.setProgress(80);
         onCall("7376148354");
         progressBar.setProgress(100);
+
+//        Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        startActivityForResult(camera_intent, pic_id);
         finish();
         Log.e("call1",panicResponses.get(0).getLinkEmergencyContact());
         Log.e("call2",panicResponses.get(0).getLinkDocName());
     }
+
+//    protected void onActivityResult(int requestCode,
+//                                    int resultCode,
+//                                    Intent data)
+//    {
+//
+//        // Match the request 'pic id with requestCode
+//        if (requestCode == pic_id) {
+//
+//            // BitMap is data structure of image file
+//            // which stor the image in memory
+//            Bitmap photo = (Bitmap)data.getExtras()
+//                    .get("data");
+//            Log.e("photo",new Gson().toJson(photo));
+//
+//            // Set the image in imageview for display
+//        }
+//    }
+
 
 
 
@@ -387,7 +417,7 @@ public class PanicActivity extends AppCompatActivity implements LocationListener
         String SMS_DELIVERED_INTENT_FILTER = "com.yourapp.sms_delivered";
         getLocation();
 
-        String message = address+"\n SOS!! I am seriously Ill and being taken to nearest hospital ";
+        String message = address+"\n SOS!! I am seriously ILL and being taken to nearest hospital ";
         Log.e("number",number);
         Log.e("message",message);
 

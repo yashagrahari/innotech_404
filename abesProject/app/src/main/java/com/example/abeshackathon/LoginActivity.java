@@ -32,7 +32,6 @@ public class LoginActivity extends AppCompatActivity {
 
         final TextInputEditText username,password;
         Button login;
-//session
         try{
             SharedPreferences sharedPreferences = getSharedPreferences("data",MODE_PRIVATE);
             String flag = sharedPreferences.getString("logindata","null");
@@ -46,8 +45,6 @@ public class LoginActivity extends AppCompatActivity {
         catch(Exception e){
 
         }
-
-//session
         username=findViewById(R.id.username);
         password=findViewById(R.id.password);
         login=findViewById(R.id.buttonlogin);
