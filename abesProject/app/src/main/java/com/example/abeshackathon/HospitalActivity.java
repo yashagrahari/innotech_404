@@ -121,8 +121,9 @@ public class HospitalActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<Hospitalbuttonresponse> call, Response<Hospitalbuttonresponse> response) {
                       Hospitalbuttonresponse hospitaldataresponses=response.body();
-                      Log.e("response",gson.toJson(hospitaldataresponses));
-                        Toast.makeText(HospitalActivity.this,"Data reset successfull",Toast.LENGTH_LONG).show();
+                        Toast.makeText(HospitalActivity.this,"Warn increased",Toast.LENGTH_LONG).show();
+
+                        Log.e("response",gson.toJson(hospitaldataresponses));
                     }
 
                     @Override
@@ -144,7 +145,8 @@ public class HospitalActivity extends AppCompatActivity {
                     public void onResponse(Call<Hospitalbuttonresponse> call, Response<Hospitalbuttonresponse> response) {
                         Hospitalbuttonresponse hospitaldataresponses=response.body();
                         Log.e("response",gson.toJson(hospitaldataresponses));
-                        Toast.makeText(HospitalActivity.this,"Warn increased",Toast.LENGTH_LONG).show();
+                        Toast.makeText(HospitalActivity.this,"Data reset successfull",Toast.LENGTH_LONG).show();
+
 
 
                     }
