@@ -7,35 +7,55 @@
     tools:context=".HospitalActivity">
 
 
-    <androidx.appcompat.widget.Toolbar
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/toolbar"
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:background="#00A4A5"-->
+<!--        app:title="Hospital"-->
+<!--        app:titleTextColor="#fff"-->
+<!--        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+<!--        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"  />-->
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#00A4A5"
-        app:title="Hospital"
-        app:titleTextColor="#fff"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"  />
+        android:layout_height="300dp" />
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewPager"
+        app:tabBackground="@drawable/indicator_selected"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp"
+        />
 
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/indicator"
+        android:layout_marginTop="50dp"
         android:id="@+id/spinner"
         android:layout_centerHorizontal="true">
+
+
 
     </Spinner>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="60dp"
         android:id="@+id/reset"
+        android:layout_below="@+id/spinner"
+        android:layout_marginTop="50dp"
         android:background="#9AB0EA"
         android:text="reset"></Button>
 
@@ -43,10 +63,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Warning"
+        android:layout_below="@+id/spinner"
+        android:layout_marginTop="50dp"
         android:background="#9AB0EA"
         android:id="@+id/addwarn"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="160dp">
+        android:layout_marginLeft="190dp">
 
     </Button>
 
