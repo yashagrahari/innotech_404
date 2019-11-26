@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,7 +36,7 @@ public class MedicalAdapter extends RecyclerView.Adapter<MedicalAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView fromdate,nextdate,medicines,height,weight,bp,thyroid,sugar,allinone,number;
-        LinearLayout cardView;
+        CardView cardView;
         public ViewHolder(View itemView) {
             super(itemView);
             fromdate=itemView.findViewById(R.id.vdate);
@@ -70,7 +69,7 @@ public class MedicalAdapter extends RecyclerView.Adapter<MedicalAdapter.ViewHold
     public void onBindViewHolder(final MedicalAdapter.ViewHolder holder, final int position) {
 
         if(medicaldata.get(position).getStatus().equalsIgnoreCase("insert")){
-            holder.cardView.setBackgroundColor(Color.parseColor("#E5E5E5"));
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#E5E5E5"));
         }
         holder.medicines.setOnClickListener(new View.OnClickListener() {
             @Override
