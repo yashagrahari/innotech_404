@@ -1,79 +1,458 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:apps="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#649995"
+    android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        apps:cardCornerRadius="5dp"-->
+    <!--        >-->
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="vertical">-->
+
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="Personal Details :"-->
+    <!--                android:textSize="20sp"-->
+    <!--                android:textColor="#9AB0EC"></TextView>-->
+
+    <!--            <View-->
+    <!--                android:layout_width="160dp"-->
+    <!--                android:layout_height="2dp"-->
+    <!--                android:background="#000"></View>-->
+
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal">-->
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="Name :"-->
+    <!--                android:textSize="18sp"-->
+    <!--                android:textColor="#000">-->
+
+    <!--            </TextView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:id="@+id/name"-->
+    <!--                    android:text="YASH AGRAHARI"-->
+    <!--                    android:textSize="18sp"></TextView>-->
+
+
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal">-->
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="Age :"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    android:textColor="#000">-->
+
+    <!--                </TextView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:id="@+id/age"-->
+
+    <!--                    android:text="19"-->
+    <!--                    android:textSize="18sp"></TextView>-->
+
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+
+    <!--                    android:text="Blood Group :"-->
+    <!--                    android:layout_marginLeft="40dp"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    android:textColor="#000">-->
+
+    <!--                </TextView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:id="@+id/bg"-->
+    <!--                    android:text="B+"-->
+    <!--                    android:textSize="18sp"></TextView>-->
+
+
+    <!--            </LinearLayout>-->
+
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal">-->
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+
+    <!--                    android:text="Mobile no. :"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    android:textColor="#000">-->
+
+    <!--                </TextView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:text="9792920841"-->
+    <!--                    android:id="@+id/mobileno"-->
+    <!--                    android:textSize="18sp"></TextView>-->
+
+
+    <!--            </LinearLayout>-->
+
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal">-->
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="Email :"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    android:textColor="#000">-->
+
+    <!--                </TextView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:id="@+id/email"-->
+
+    <!--                    android:text="agrahariyash10@gmail.com"-->
+    <!--                    android:textSize="18sp"></TextView>-->
+
+
+    <!--            </LinearLayout>-->
+
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal">-->
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+
+    <!--                    android:text="Address :"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    android:textColor="#000">-->
+
+    <!--                </TextView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:id="@+id/address"-->
+    <!--                    android:text="House no.40/A purdilpur Golghar GORAKHPUR -273001"-->
+    <!--                    android:textSize="18sp"></TextView>-->
+
+
+    <!--            </LinearLayout>-->
+
+    <!--        </LinearLayout>-->
+
+    <!--    </androidx.cardview.widget.CardView>-->
+
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        apps:cardCornerRadius="3dp"-->
+    <!--        >-->
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="8dp"-->
+    <!--                android:text="Medical Details:"-->
+    <!--                android:textSize="20sp"-->
+    <!--                android:textColor="#9AB0EC"></TextView>-->
+
+    <!--            <View-->
+    <!--                android:layout_width="160dp"-->
+    <!--                android:layout_height="2dp"-->
+    <!--                android:background="#000"></View>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                >-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="Family Doctor :"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    ></TextView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:id="@+id/dname"-->
+    <!--                    android:text="Dr.Samyak Jain"></TextView>-->
+    <!--            </LinearLayout>-->
+
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                >-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="Doctor's email :"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    ></TextView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    android:id="@+id/demail"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:text="mephenomenal@gmail.com"></TextView>-->
+    <!--            </LinearLayout>-->
+
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                >-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="Doctor's Mobile no. :"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    ></TextView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:id="@+id/dmobile"-->
+    <!--                    android:text="9792920841"></TextView>-->
+    <!--            </LinearLayout>-->
+
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                >-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="Emergency contacts :"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    ></TextView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:id="@+id/emergencycontacts"-->
+    <!--                    android:text="1800291376"></TextView>-->
+    <!--            </LinearLayout>-->
+
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                >-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="Pre Health details :"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    ></TextView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:id="@+id/prehealth"-->
+    <!--                    android:text="All fine"></TextView>-->
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                >-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="Health status :"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    ></TextView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:text="Improving"></TextView>-->
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                >-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="Hospital in Touch :"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    ></TextView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:text="Yashoda Hospital"></TextView>-->
+    <!--            </LinearLayout>-->
+
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                >-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text=" Address of hospital :"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    ></TextView>-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:textSize="18sp"-->
+    <!--                    android:textColor="#000"-->
+    <!--                    android:text="Rdc Ghaziabad-201206"></TextView>-->
+    <!--            </LinearLayout>-->
+
+
+    <!--        </LinearLayout>-->
+
+
+    <!--    </androidx.cardview.widget.CardView>-->
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/myphoto"></de.hdodenhof.circleimageview.CircleImageView>
+
+    <ScrollView
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        apps:cardCornerRadius="5dp"
-        >
+        android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/layout"
             android:orientation="vertical">
 
 
             <TextView
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Personal Details :"
-                android:textSize="20sp"
-                android:textColor="#9AB0EC"></TextView>
-
-            <View
-                android:layout_width="160dp"
-                android:layout_height="2dp"
-                android:background="#000"></View>
-
-
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="YASH AGRAHARI"
+                android:textColor="#EAA260"
+                android:textSize="28sp"></TextView>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Name :"
-                android:textSize="18sp"
-                android:textColor="#000">
-
-            </TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#000"
-                    android:id="@+id/name"
-                    android:text="YASH AGRAHARI"
-                    android:textSize="18sp"></TextView>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
                     android:text="Age :"
-                    android:textSize="18sp"
-                    android:textColor="#000">
+                    android:textColor="#649995"
+                    android:textSize="18sp">
 
                 </TextView>
 
                 <TextView
+                    android:id="@+id/age"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#000"
-                    android:id="@+id/age"
-
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
                     android:text="19"
                     android:textSize="18sp"></TextView>
 
@@ -81,326 +460,231 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:layout_margin="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="@font/open_sans_regular"
                     android:text="Blood Group :"
-                    android:layout_marginLeft="40dp"
-                    android:textSize="18sp"
-                    android:textColor="#000">
+                    android:textColor="#649995"
+                    android:textSize="18sp">
 
                 </TextView>
 
                 <TextView
+                    android:id="@+id/bg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#000"
-                    android:id="@+id/bg"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
                     android:text="B+"
                     android:textSize="18sp"></TextView>
 
-
-
             </LinearLayout>
 
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:text="Mobile no. :"
-                    android:textSize="18sp"
-                    android:textColor="#000">
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Mobile no :"
+                    android:textColor="#649995"
+                    android:textSize="18sp">
 
                 </TextView>
 
                 <TextView
+                    android:id="@+id/mobileno"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#000"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
                     android:text="9792920841"
-                    android:id="@+id/mobileno"
                     android:textSize="18sp"></TextView>
 
 
             </LinearLayout>
 
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
                     android:text="Email :"
-                    android:textSize="18sp"
-                    android:textColor="#000">
+                    android:textColor="#649995"
+                    android:textSize="18sp">
 
                 </TextView>
 
                 <TextView
+                    android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#000"
-                    android:id="@+id/email"
-
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
                     android:text="agrahariyash10@gmail.com"
                     android:textSize="18sp"></TextView>
 
-
             </LinearLayout>
 
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
                     android:text="Address :"
-                    android:textSize="18sp"
-                    android:textColor="#000">
+                    android:textColor="#649995"
+                    android:textSize="18sp">
 
                 </TextView>
 
                 <TextView
+                    android:id="@+id/address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#000"
-                    android:id="@+id/address"
-                    android:text="House no.40/A purdilpur Golghar GORAKHPUR -273001"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="House no. 40/a near Kama Hotel Purdilpur Golghar"
                     android:textSize="18sp"></TextView>
-
 
             </LinearLayout>
 
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        apps:cardCornerRadius="3dp"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/gray"></View>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Medical Details:"
-                android:textSize="20sp"
-                android:textColor="#9AB0EC"></TextView>
-
-            <View
-                android:layout_width="160dp"
-                android:layout_height="2dp"
-                android:background="#000"></View>
+                android:text="Medical Details"
+                android:textColor="#649995"
+                android:textSize="20sp"></TextView>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
                     android:text="Family Doctor :"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    ></TextView>
+                    android:textColor="#649995"
+                    android:textSize="18sp">
+
+                </TextView>
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:textColor="#000"
                     android:id="@+id/dname"
-                    android:text="Dr.Samyak Jain"></TextView>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Dr Samyak Jain"
+                    android:textSize="18sp"></TextView>
+
             </LinearLayout>
 
-
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Doctor's email :"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    ></TextView>
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Doctor's Email :"
+                    android:textColor="#649995"
+                    android:textSize="18sp">
+
+                </TextView>
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
                     android:id="@+id/demail"
-                    android:textColor="#000"
-                    android:text="mephenomenal@gmail.com"></TextView>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="mrphenomenal@gmail.com"
+                    android:textSize="18sp"></TextView>
+
             </LinearLayout>
 
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Doctor's Mobile no. :"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    ></TextView>
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text=" Doctor Mobile no :"
+                    android:textColor="#649995"
+                    android:textSize="18sp">
+
+                </TextView>
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:textColor="#000"
                     android:id="@+id/dmobile"
-                    android:text="9792920841"></TextView>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="8317779699"
+                    android:textSize="18sp"></TextView>
+
             </LinearLayout>
 
-
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Emergency contacts :"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    ></TextView>
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Emergency Contacts :"
+                    android:textColor="#649995"
+                    android:textSize="18sp">
+
+                </TextView>
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:textColor="#000"
                     android:id="@+id/emergencycontacts"
-                    android:text="1800291376"></TextView>
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pre Health details :"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    ></TextView>
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="8272627733"
+                    android:textSize="18sp"></TextView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:textColor="#000"
-                    android:id="@+id/prehealth"
-                    android:text="All fine"></TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Health status :"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    ></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:textColor="#000"
-                    android:text="Improving"></TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hospital in Touch :"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    ></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:textColor="#000"
-                    android:text="Yashoda Hospital"></TextView>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" Address of hospital :"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    ></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:textColor="#000"
-                    android:text="Rdc Ghaziabad-201206"></TextView>
             </LinearLayout>
 
 
         </LinearLayout>
+    </ScrollView>
 
-
-    </androidx.cardview.widget.CardView>
 </LinearLayout>

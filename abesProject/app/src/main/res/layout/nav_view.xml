@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:id="@+id/nav_header"
-    android:background="#E9F5EE">
+    android:background="#E1EAFC">
 
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -21,7 +21,7 @@
         android:layout_margin="8dp"
         app:civ_border_color="@color/black"
         app:civ_border_width="2dp"
-        android:src="@drawable/doctor" />
+        android:src="@drawable/myphoto" />
 
 
     <LinearLayout
@@ -42,7 +42,7 @@
             android:gravity="left"
             android:text="Username"
             android:textStyle="bold"
-            android:textColor="@android:color/black"
+            android:textColor="@color/darker"
             android:textSize="18sp" />
 
         <TextView
@@ -57,10 +57,10 @@
             android:fontFamily="sans-serif-light"
             android:layout_marginTop="3dp"
             android:gravity="left"
-            android:text="1721CS1157"
-            android:textColor="@android:color/black"
-            android:textSize="11sp"
-            android:textStyle="italic" />
+            android:text="agrahariyash10@gmail.com"
+            android:textColor="@color/darker"
+            android:textSize="14sp"
+             />
     </LinearLayout>
 
 </LinearLayout>

@@ -40,12 +40,12 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/white"
+        android:background="@color/chipUnselected"
         android:fitsSystemWindows="true"
         android:fontFamily="sans-serif-light"
         app:headerLayout="@layout/nav_view"
         app:itemTextColor="@color/black"
-        app:itemIconTint="#9CD5AC"
+        app:itemIconTint="#53A3F4"
         app:menu="@menu/navigation_view" />
 
 

@@ -62,7 +62,7 @@ public class Profile extends Fragment {
             public void onResponse(Call<List<Profiledata>> call, Response<List<Profiledata>> response) {
                 List<Profiledata> profiledata=response.body();
                 Log.e("profiledata",gson.toJson(profiledata));
-                        name.setText(profiledata.get(0).getName());
+                        name.setText(profiledata.get(0).getName().toUpperCase());
                 age.setText(profiledata.get(0).getAge());
                 bg.setText(profiledata.get(0).getBlood_group());
                 mobileno.setText(profiledata.get(0).getMobile_no());

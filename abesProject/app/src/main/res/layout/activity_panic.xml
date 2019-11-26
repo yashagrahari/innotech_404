@@ -12,6 +12,8 @@
         android:gravity="center"
         android:layout_margin="10dp"
         android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:fontFamily="sans-serif"
         android:padding="10dp"
         android:layout_width="match_parent"

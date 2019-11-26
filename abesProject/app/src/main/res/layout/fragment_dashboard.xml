@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/windowBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -42,8 +43,8 @@
         android:layout_height="150dp"
         android:layout_margin="10dp"
         android:elevation="8dp"
-        app:cardCornerRadius="3dp"
-        app:cardBackgroundColor="@color/windowBackground"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/white"
         android:id="@+id/emergencybutton">
         <LinearLayout
             android:layout_width="match_parent"
@@ -76,9 +77,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:cardCornerRadius="3dp"
+        app:cardCornerRadius="16dp"
         android:elevation="8dp"
-        app:cardBackgroundColor="@color/windowBackground"
+        app:cardBackgroundColor="@color/white"
         android:layout_below="@+id/emergencybutton"
         android:id="@+id/layoutremarks"
         >
@@ -115,8 +116,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:id="@+id/reminder"
-        app:cardCornerRadius="3dp"
-        app:cardBackgroundColor="@color/windowBackground"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/white"
         android:layout_below="@+id/layoutremarks"
         >
        <LinearLayout
@@ -210,8 +211,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:cardCornerRadius="3dp"
-        app:cardBackgroundColor="@color/windowBackground"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/white"
         android:layout_below="@+id/reminder"
         >
     <LinearLayout
@@ -238,7 +239,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/doc"
                 android:id="@+id/doc"
-                android:backgroundTint="#9CD5AC"></ImageView>
+                android:backgroundTint="#53A3F4"></ImageView>
 
         </androidx.cardview.widget.CardView>
         <View
@@ -254,13 +255,14 @@
             android:layout_height="150dp"
             android:layout_margin="20dp"
             android:clickable="true"
+            android:id="@+id/clinic"
             android:layout_gravity="center"
             app:cardBackgroundColor="@color/windowBackground"
             >
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="#9CD5AC"
+                android:backgroundTint="#53A3F4"
                 android:background="@drawable/hospital"></ImageView>
 
 

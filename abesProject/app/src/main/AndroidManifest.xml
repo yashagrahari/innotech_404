@@ -15,7 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".HospitalActivity"></activity>
+        <activity android:name=".Register"></activity>
+        <activity android:name=".SearchClinic" />
+        <activity android:name=".Searchdoc" />
+        <activity android:name=".HospitalActivity" />
         <activity android:name=".PanicActivity" />
 
         <receiver android:name=".PanicButton">
@@ -35,7 +38,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

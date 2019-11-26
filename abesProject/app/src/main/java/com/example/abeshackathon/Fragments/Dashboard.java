@@ -10,11 +10,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.abeshackathon.PanicActivity;
 import com.example.abeshackathon.R;
 import com.example.abeshackathon.Receiveddata.Loginresponse;
+import com.example.abeshackathon.SearchClinic;
+import com.example.abeshackathon.Searchdoc;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -35,6 +38,9 @@ public class Dashboard extends Fragment {
         TextView remarks=parentView.findViewById(R.id.remarks);
         Button button=parentView.findViewById(R.id.panicb);
         TextView fromdate=parentView.findViewById(R.id.lastdate);
+        CardView doctors=parentView.findViewById(R.id.doctor);
+        CardView clinic=parentView.findViewById(R.id.clinic);
+
         TextView nextdate=parentView.findViewById(R.id.nextdate);
        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("data", MODE_PRIVATE);
        String string=sharedPreferences.getString("logindata","");
@@ -49,6 +55,22 @@ public class Dashboard extends Fragment {
            @Override
            public void onClick(View view) {
                Intent intent=new Intent(getActivity(), PanicActivity.class);
+               startActivity(intent);
+           }
+       });
+
+       doctors.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent=new Intent(getActivity(), Searchdoc.class);
+               startActivity(intent);
+           }
+       });
+
+       clinic.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent=new Intent(getActivity(), SearchClinic.class);
                startActivity(intent);
            }
        });

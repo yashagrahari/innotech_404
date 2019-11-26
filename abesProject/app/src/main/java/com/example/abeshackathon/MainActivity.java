@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         }.getType();
         Loginresponse loginresponse=gson.fromJson(string,type);
         drawerName.setText(loginresponse.getStatus().toUpperCase());
-        drawerId.setText("");
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {

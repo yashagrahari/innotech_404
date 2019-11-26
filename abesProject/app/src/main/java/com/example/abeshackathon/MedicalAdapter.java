@@ -35,7 +35,7 @@ public class MedicalAdapter extends RecyclerView.Adapter<MedicalAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView fromdate,nextdate,medicines,height,weight,bp,thyroid,sugar,allinone;
+        TextView fromdate,nextdate,medicines,height,weight,bp,thyroid,sugar,allinone,number;
         CardView cardView;
         public ViewHolder(View itemView) {
             super(itemView);
@@ -50,6 +50,8 @@ public class MedicalAdapter extends RecyclerView.Adapter<MedicalAdapter.ViewHold
             allinone=itemView.findViewById(R.id.allinone);
             cardView=itemView.findViewById(R.id.cardappoint);
             allinone.setVisibility(View.GONE);
+            number=itemView.findViewById(R.id.number);
+
 
 
         }
@@ -108,6 +110,7 @@ public class MedicalAdapter extends RecyclerView.Adapter<MedicalAdapter.ViewHold
         holder.nextdate.setText(medicaldata.get(position).getNext_date());
         holder.fromdate.setText(medicaldata.get(position).getToday_date());
         holder.sugar.setText(medicaldata.get(position).getSugar());
+        holder.number.setText((position+1)+"");
 
     }
 
