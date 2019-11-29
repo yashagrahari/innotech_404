@@ -21,6 +21,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.ToneGenerator;
 import android.net.Uri;
 import android.os.Bundle;
@@ -273,7 +274,6 @@ public class PanicActivity extends AppCompatActivity implements LocationListener
 
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra("android.intent.extra.quickCapture",true);
-//        progressBar.setProgress(20);
         countdown.setVisibility(View.GONE);
         cancel.setVisibility(View.GONE);
         relativeLayout.setVisibility(View.VISIBLE);
@@ -324,45 +324,25 @@ public class PanicActivity extends AppCompatActivity implements LocationListener
         Type type = new TypeToken<List<PanicResponse>>() {
         }.getType();
         List<PanicResponse> panicResponses=new Gson().fromJson(response,type);
-//        if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//
-//            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION}, 101);
-//
-//        }
-//        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+
         progressBar.setProgress(30);
+
+
         getLocation();
         onMsg(panicResponses.get(0).getLinkEmergencyContact());
         progressBar.setProgress(60);
         onMsg(panicResponses.get(0).getLinkDocNo());
         progressBar.setProgress(80);
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.alarm_beeps);
+        mp.start();
         onCall("7376148354");
         progressBar.setProgress(100);
 
-//        Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//        startActivityForResult(camera_intent, pic_id);
         finish();
         Log.e("call1",panicResponses.get(0).getLinkEmergencyContact());
         Log.e("call2",panicResponses.get(0).getLinkDocName());
     }
 
-//    protected void onActivityResult(int requestCode,
-//                                    int resultCode,
-//                                    Intent data)
-//    {
-//
-//        // Match the request 'pic id with requestCode
-//        if (requestCode == pic_id) {
-//
-//            // BitMap is data structure of image file
-//            // which stor the image in memory
-//            Bitmap photo = (Bitmap)data.getExtras()
-//                    .get("data");
-//            Log.e("photo",new Gson().toJson(photo));
-//
-//            // Set the image in imageview for display
-//        }
-//    }
 
 
 

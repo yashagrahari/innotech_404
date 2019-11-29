@@ -139,15 +139,13 @@ public class HospitalActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Warnresetrequest hospitalbuttonrequest= Retro.createService(Warnresetrequest.class);
-                Call<Hospitalbuttonresponse> call=hospitalbuttonrequest.requestresponse("19");
+                Call<Hospitalbuttonresponse> call=hospitalbuttonrequest.requestresponse(selectedSubjectId);
                 call.enqueue(new Callback<Hospitalbuttonresponse>() {
                     @Override
                     public void onResponse(Call<Hospitalbuttonresponse> call, Response<Hospitalbuttonresponse> response) {
                         Hospitalbuttonresponse hospitaldataresponses=response.body();
                         Log.e("response",gson.toJson(hospitaldataresponses));
                         Toast.makeText(HospitalActivity.this,"Data reset successfull",Toast.LENGTH_LONG).show();
-
-
 
                     }
 

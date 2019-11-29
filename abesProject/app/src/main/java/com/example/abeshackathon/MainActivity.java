@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -151,8 +152,31 @@ public class MainActivity extends AppCompatActivity {
             ft.commit();
         }
     }
+//
+//    @Override
+//    public boolean onPrepareOptionsMenu(Menu menu) {
+//
+//        getMenuInflater().inflate(R.menu.horn, menu);
+//
+//        return super.onPrepareOptionsMenu(menu);
+//    }
 
-    @Override
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//
+//        switch (item.getItemId()) {
+//            case R.id.buzzer: {
+//
+//                final MediaPlayer mp = MediaPlayer.create(this, R.raw.alarm_beeps);
+//                mp.start();
+//
+//                invalidateOptionsMenu();
+//                break;
+//            }
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
+            @Override
     public void onBackPressed() {
         super.onBackPressed();
         finish();

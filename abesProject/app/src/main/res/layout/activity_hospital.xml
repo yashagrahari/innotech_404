@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/indicator"
         android:layout_marginTop="50dp"
-        android:backgroundTint="@color/darker"
+        android:background="@color/windowBackground"
         android:id="@+id/spinner"
         android:layout_centerHorizontal="true">
 
